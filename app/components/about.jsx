@@ -18,6 +18,7 @@ const reveal = (delay = 0) => ({
 });
 
 export default function MedicAbout({ data }) {
+  if (!data) return null;
   const skills = data?.skills || [];
   const flatSkills = skills.flatMap?.((s) =>
     typeof s === "object" && s.items ? s.items : [s]
